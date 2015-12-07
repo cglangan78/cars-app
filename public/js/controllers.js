@@ -15,14 +15,11 @@
 
 		self.api.list().success(function(response){
 			self.cars = response
-			//console.log(response)
 		})
 
 		self.addCar = function(make,model,year){
 			var data = {make: make, model: model, year: year}
 			cars.addCar(data).then(function success(response){
-				//notice the format of the data we need to push to the array:
-				// console.log(response)
 				self.cars.push(response.data.car)
 				self.newCar = {}
 				$window.document.querySelectorAll('#new-car-form input')[0].focus()
