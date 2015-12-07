@@ -15,7 +15,7 @@
 
 		self.api.list().success(function(response){
 			self.cars = response
-			console.log(response)
+			//console.log(response)
 		})
 
 		self.addCar = function(make,model,year){

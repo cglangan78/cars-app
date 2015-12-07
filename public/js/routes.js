@@ -10,14 +10,10 @@ function carRoutes($stateProvider, $urlRouterProvider){
         url: '/cars',
         templateUrl: 'partials/car-list.html',
         controller: 'carsController as carsCtrl'
-        // controllerAs: ''
       })
-      .state('cars.detail', {
-        url: '/:carId',
+      .state('detail', {
+        url: '/cars/:carId',
         templateUrl: 'partials/car-detail.html',
         controller: 'carDetailController as carDetailCtrl'
-        // controllerAs: 'carDetailCtrl'
-      })
-      
-      
+      })      
 }
