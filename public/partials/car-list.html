@@ -1,0 +1,9 @@
+<car-form></car-form>
+
+<h2 ng-show="carsCtrl.cars.length">All Cars:</h2>
+<div class="list-group">
+	<a ng-repeat="car in carsCtrl.cars | reverse" href="#/cars/{{ car._id }}" class="list-group-item">
+  		<h3 class="list-group-item-heading">{{ car.make }} {{ car.model }}</h3>
+  		<p class="list-group-item-text">{{ car.year }}</p>
+  	</a>
+</div>
