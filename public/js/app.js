@@ -1,4 +1,4 @@
-angular.module('carsApp', ['ngRoute'])
+angular.module('carsApp', ['ui.router'])
 	.directive('navBar', navBar)
 	.directive('carForm', carForm)
 	.filter('reverse', reverse)

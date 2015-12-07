@@ -1,19 +1,23 @@
 angular.module('carsApp')
-	.config(['$routeProvider', carRoutes])
+	.config(carRoutes)
 
-function carRoutes($routeProvider){
-	$routeProvider.
-      when('/cars', {
+carRoutes.$inject = ['$stateProvider', '$urlRouterProvider']
+
+function carRoutes($stateProvider, $urlRouterProvider){
+	$urlRouterProvider.otherwise('/cars')
+  $stateProvider
+      .state('cars', {
+        url: '/cars',
         templateUrl: 'partials/car-list.html',
-        controller: 'carsController',
-        controllerAs: 'carsCtrl'
-      }).
-      when('/cars/:carId', {
+        controller: 'carsController as carsCtrl'
+        // controllerAs: ''
+      })
+      .state('cars.detail', {
+        url: '/:carId',
         templateUrl: 'partials/car-detail.html',
-        controller: 'carDetailController',
-        controllerAs: 'carDetailCtrl'
-      }).
-      otherwise({
-        redirectTo: '/cars'
-      });
+        controller: 'carDetailController as carDetailCtrl'
+        // controllerAs: 'carDetailCtrl'
+      })
+      
+      
 }

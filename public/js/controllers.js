@@ -3,8 +3,8 @@
 		.controller('carsController', carsController)
 		.controller('carDetailController', carDetailController)
 
-	carsController.$inject = ['cars', '$window', '$timeout']
-	carDetailController.$inject = ['cars','$routeParams','$location']
+	carsController.$inject = ['cars', '$window']
+	carDetailController.$inject = ['cars','$stateParams','$location']
 
 	function carsController(cars, $window, $timeout){
 		var self = this
@@ -15,6 +15,7 @@
 
 		self.api.list().success(function(response){
 			self.cars = response
+			console.log(response)
 		})
 
 		self.addCar = function(make,model,year){
@@ -29,7 +30,7 @@
 		}
 	}
 
-	function carDetailController(cars,$routeParams,$location){
+	function carDetailController(cars,$stateParams,$location){
 		var self = this
 		self.name = 'Car Detail'
 		self.api = cars
@@ -40,7 +41,7 @@
 				self.car = response
 			})
 		}
-		self.showCar($routeParams.carId)
+		self.showCar($stateParams.carId)
 
 		self.updateCar = function(carId, make, model, year){
 			var data = {make: make, model: model, year: year}
