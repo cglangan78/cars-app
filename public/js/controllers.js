@@ -39,6 +39,7 @@
 		self.showCar = function(carId){
 			self.api.show(carId).success(function(response){
 				self.car = response
+				console.log(response)
 			})
 		}
 		self.showCar($stateParams.carId)
