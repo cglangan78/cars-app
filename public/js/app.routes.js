@@ -18,9 +18,9 @@
 	      })
 				// login page
 				.when('/login', {
-					templateUrl : 'partials/login.html',
-						controller  : 'mainController',
-							controllerAs: 'login'
+					templateUrl: '/partials/login.html',
+					controller: 'mainController',
+					controllerAs: 'login'
 				})
 
 				// show all users
