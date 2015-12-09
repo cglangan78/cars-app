@@ -3,7 +3,6 @@ angular.module('carsApp')
 
 cars.$inject = ['$http']
 
-// cars factory
 function cars($http){
 	var carsUrl = '/api/cars'
 	var cars = {}

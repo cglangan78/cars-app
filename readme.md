@@ -11,4 +11,9 @@ To run:
 
 1. while in the cloned repo directory, from terminal, run `mongod`.
 2. run `nodemon`
+<<<<<<< HEAD
 3. add, edit, update and remove cars like the boss that you are.
+=======
+3. add, edit, update and remove cars like the boss that you are.
+
+>>>>>>> 8814e9730b656a056aa3476764be4197978e711d
