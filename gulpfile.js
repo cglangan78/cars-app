@@ -3,6 +3,7 @@ var
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	uglifycss = require('gulp-uglifycss'),
+	iife = require('gulp-iife')
 	nodemon = require('gulp-nodemon'),
 	browserSync = require('browser-sync')
 
@@ -17,6 +18,7 @@ gulp.task('minify-css', function(){
 gulp.task('minify-js', function(){
 	gulp.src('public-dev/js/*.js')
 		.pipe(concat('application.min.js'))
+		.pipe(iife())
 		.pipe(uglify())
 		.pipe(gulp.dest('public/js'))
 })
