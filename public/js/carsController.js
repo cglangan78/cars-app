@@ -2,7 +2,7 @@
 
 	// add both controllers to the main app module
 
-	angular.module('carsApp')
+	angular.module('carsCtrl', [])
 		.controller('carsController', carsController)
 		.controller('carDetailController', carDetailController)
 

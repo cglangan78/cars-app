@@ -1,27 +1,10 @@
-angular.module('carsApp', ['ngRoute'])
-	.directive('navBar', navBar)
-	.directive('carForm', carForm)
-	.filter('reverse', reverse)
+angular.module('carsApp', ['ngAnimate', 'app.routes', 'mainCtrl', 'userCtrl', 'userService','authService', 'carsCtrl','cars', 'carsFactory'])
 
-function reverse() {
-	return function(items) {
-		return items.slice().reverse();
-	};
-}
+// application configuration to integrate token into requests
+.config(function($httpProvider) {
 
-function carForm(){
-	var directive = {
-		restrict: 'E',
-		templateUrl: '/partials/car-form.html'
-	}
-	return directive
-}
 
-function navBar(){
-	var directive = {
-		restrict: 'E',
-		templateUrl: '/partials/nav.html',
-		transclude: true
-	}
-	return directive
-}
+	// attach our auth interceptor to the http requests
+    $httpProvider.interceptors.push('AuthInterceptor')
+
+});
