@@ -1,10 +1,10 @@
 var
-	express 	 	= require('express'),
-	apiRouter  	= express.Router(),
-	mongoose 	 	= require('mongoose'),
-	Car 			 	= require('../models/Car.js'),
-	User 			 	= require('../models/user.js'),
-	jwt        	= require('jsonwebtoken'),
+	express = require('express'),
+	apiRouter = express.Router(),
+	mongoose = require('mongoose'),
+	Car = require('../models/Car.js'),
+	User = require('../models/user.js'),
+	jwt = require('jsonwebtoken'),
 	superSecret	= 'frijoles'
 
 apiRouter.get('/', function(req,res){
