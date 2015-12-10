@@ -86,6 +86,17 @@ apiRouter.post('/sample', function(req, res) {
 
 });
 
+
+apiRouter.get('/addCar/:carId', function(req,res){
+	User.findOne({_id: '5667953f1324d6c948fa867e'}, function(err,user){
+		user.cars.push(req.params.carId)
+		user.save(function(err){
+			if (err) throw (err)
+			res.json(user)
+		})
+	})
+})
+
 // route to authenticate a user (POST http://localhost:8080/api/authenticate)
 apiRouter.post('/authenticate', function(req, res) {
 

@@ -40,6 +40,8 @@
 				$window.document.querySelectorAll('#new-car-form input')[0].focus()
 			})
 		}
+
+
 	}
 
 	function carDetailController(cars,$routeParams,$location){
@@ -74,6 +76,12 @@
 			self.api.removeCar(carId).success(function(response){
 				console.log(response)
 				$location.path('/cars')
+			})
+		}
+
+		self.addFavorite = function(carId){
+			self.api.addFavorite(carId).success(function(response){
+				console.log(response)
 			})
 		}
 	}

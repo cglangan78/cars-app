@@ -30,6 +30,9 @@
 		cars.removeCar = function(carId){
 			return $http.delete(carsUrl + '/' + carId)
 		}
+		cars.addFavorite = function(carId){
+			return $http.get('/api/addCar/' + carId)
+		}
 
 		return cars
 	}
